@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Quiz App</title>
+    <style>
+        /* General reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Quiz container */
+.quiz-container {
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Header Styling */
+.quiz-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #007bff;
+    letter-spacing: 1px;
+}
+
+/* Question Styling */
+.question {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+/* Options Styling */
+.options {
+    list-style: none;
+    padding: 0;
+}
+
+.options li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.options input {
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.options input:checked {
+    transform: scale(1.2);
+}
+
+.options label {
+    font-size: 1rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Submit Button */
+.submit-container button {
+    padding: 12px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+.submit-container button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Result Styling */
+.result {
+    font-size: 1.2rem;
+    color: #28a745;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <header class="quiz-header">
+            <h1>Interactive Quiz</h1>
+        </header>
+        <div id="quiz-content">
+            <!-- Questions will be dynamically inserted here -->
+        </div>
+        <div class="submit-container">
+            <button id="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
